@@ -1,0 +1,216 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+
+body{
+    background: #1d1d1d;
+    margin: 0px;
+}
+
+/* Login box */
+#login-window{
+    padding-top: 40px;
+    height: 420px;
+    width: 350px;
+    background: #111;
+    color: white;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 50px;
+    position: relative;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.7);
+}
+
+/* Image logo */
+#logo{
+    position: absolute;
+    left: 14.5px;
+}
+
+.login-input{
+    width: 90%;
+    height: 40px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    top: 110px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.login-text{
+    font-size: 20px;
+    position: relative;
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    top: 105px;
+}
+
+/* Where error messages will be displayed */
+#err{
+    color: #f20c45;
+    position: relative;
+    top: 100px;
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    visibility: hidden;
+}
+
+#back{
+    position: relative;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    width: 6em;
+    cursor: pointer;
+    left: 20px;
+    display: block;
+    top: 8px;
+    background: #f4425c;
+    color: white;
+    font-size: 20px;
+    transition: all 0.1s;
+    box-shadow: 0px 5px 0px #7c2230;
+}
+#back:hover{
+    top: 6px;
+    box-shadow: 0px 7px 0px #7c2230;
+}
+#back:active{
+    top: 10px;
+    box-shadow: 0px 3px 0px #7c2230;
+}
+
+#how-to{
+    position: relative;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    top: 135px;
+    color: white;
+}
+
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: #cd1341;
+}
+
+
+
+#login-button{
+    position: relative;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    width: 90%;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+    top: 115px;
+    background: #5fb74b;
+    color: white;
+    font-size: 20px;
+    transition: all 0.1s;
+    box-shadow: 0px 5px 0px #3a722d;
+}
+
+#login-button:hover{
+    top: 113px;
+    box-shadow: 0px 7px 0px #3a722d;
+}
+#login-button:active{
+    top: 117px;
+    box-shadow: 0px 3px 0px #3a722d;
+}
+
+button:focus {outline:0;}
+
+#chat-window{
+    width: 90%;
+    max-width: 800px;
+    height: 98vh;
+    border-radius: 5px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px black;
+    position: relative;
+    background: #111;
+}
+
+#chat-input-container{
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+}
+
+#chat-header{
+    height: 70px;
+    border-radius: 0px 0px 10px 10px;
+    width: 100%;
+    background: #c41745;
+}
+
+#chat-input{
+    position: relative;
+    display: block;
+    padding: 10px;
+    margin: 0 auto;
+    bottom: 10px;
+    width: 90%;
+    height: 30px;
+    border-radius: 2px;
+    border: none;
+    font-size: 18px;
+}
+
+#messages{
+    height: 80%;
+    overflow-y: scroll;
+    
+}
+
+.message{
+    color: white;
+    font-size: 18px;
+    width: 90%;
+    top: 1em;
+    position: relative;
+    margin-top: 9px !important;
+    min-height: 1.3em;
+    margin: 0 auto;
+}
+
+.username{
+    color: rgba(255,255,255,0.8);
+}
+
+.timestamp{
+    position: relative;
+    float: right;
+}
+
+
+::-webkit-scrollbar{
+    background-color: black;
+    width: 8px;
+    border-radius: 1px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #3a3a3a;
+    border-radius: 3px;
+    
+}

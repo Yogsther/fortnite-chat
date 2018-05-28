@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fortnite Chat</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- Socket.io -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+
+</head>
+
+<body>
+
+    <span id="insert">
+
+        <div id="login-window">
+            <img src="logo.png" alt="Logo" id="logo" draggable="false">
+            <span class="login-text">Username:</span>
+            <input type="text" class="login-input" placeholder="Username" id="username" oninput="updateName()" maxlength="15">
+            <span class="login-text">Code:</span>
+            <input type="text" class="login-input" placeholder="5A2F0" maxlength="5" oninput="updateCode()" id="code">
+            <span id="err">Error message!</span>
+            <button id="login-button" onclick="join()" onmouseover="newEmoji()">Join room</button>
+            <span id="how-to"><a href="">How to see your match-code!</a></span>
+        </div>
+    </span>
+    
+
+
+
+    <!--
+        
+        <div id="chat-window">
+        <div id="chat-header"></div>
+
+        <div id="messages">
+
+            
+            <div class="message">
+                <span class="username">Olle:</span>
+                Message content
+                <span class="timestamp">23:08</span>
+            </div>
+
+        </div>
+
+        <div id="chat-input-container">
+            <input type="text" placeholder="Say something!" id="chat-input">
+        </div>
+    </div>
+        
+     -->
+
+
+
+    <script src="chat.js"></script>
+</body>
+
+</html>
