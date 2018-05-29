@@ -230,3 +230,41 @@ button:focus {outline:0;}
     border-radius: 3px;
     
 }
+
+
+#eula-box{
+    width: 300px;
+    height: 300px;
+    background: #111;
+    color: white;
+    border-radius: 3px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 30px;
+    padding: 30px;
+}
+
+
+#accept-button{
+    position: relative;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    width: 6em;
+    cursor: pointer;
+    display: block;
+    top: 30px;
+    background: #f4425c;
+    color: white;
+    font-size: 20px;
+    transition: all 0.1s;
+    box-shadow: 0px 5px 0px #7c2230;
+}
+#accept-button:hover{
+    top: 28px;
+    box-shadow: 0px 7px 0px #7c2230;
+}
+#accept-button:active{
+    top: 32px;
+    box-shadow: 0px 3px 0px #7c2230;
+}

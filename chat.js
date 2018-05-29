@@ -11,15 +11,25 @@ var emojis = ["🍻", "💖", "🤯", "🤗", "🤔", "😇", "🤞", "✌", " �
 
 var joined = false;
 window.onload = () => {
-    newEmoji();
-    document.getElementById("username").focus();
-    var cachedUsername = localStorage.getItem("username");
-    if (cachedUsername != undefined) {
-        document.getElementById("username").value = cachedUsername;
-        document.getElementById("code").focus();
+    if(localStorage.getItem("eula")){
+        document.getElementById("insert").innerHTML = login;
+        newEmoji();
+        document.getElementById("username").focus();
+        var cachedUsername = localStorage.getItem("username");
+        if (cachedUsername != undefined) {
+            document.getElementById("username").value = cachedUsername;
+            document.getElementById("code").focus();
+        }
+    } else {
+
     }
+    
 }
 
+function acceptEULA(){
+    localStorage.setItem("eula", true);
+    window.onload();
+}
 
 socket.on("joined", package => {
     document.getElementById("insert").innerHTML = chat;
