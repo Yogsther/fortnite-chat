@@ -1,9 +1,0 @@
-{
-  "name": "Chat-Fortnite",
-  "version": "0.0.1",
-  "description": "Fortnite chat app",
-  "dependencies": {
-    "express": "^4.15.2",
-    "socket.io": "^2.0.3"
-  }
-}
