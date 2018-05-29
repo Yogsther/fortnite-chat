@@ -159,7 +159,7 @@ button:focus {outline:0;}
 
 #chat-header{
     height: 70px;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 0px 0px 4px 4px;
     width: 100%;
     background: #c41745;
 }
@@ -193,7 +193,6 @@ button:focus {outline:0;}
 #messages{
     height: 80%;
     overflow-y: scroll;
-    
 }
 
 .message{

@@ -31,8 +31,11 @@ socket.on("joined", package => {
             username = "<span style='color:red'>" + message.mod + "</span> " + username;
         }
         var date = new Date(message.date);
-
-        document.getElementById("messages").innerHTML += '<div class="message"> <span class="username">' + username + ':</span> ' + message.content + ' <span class="timestamp">' + date.getHours() + ":" + date.getMinutes() + '</span> </div>';
+        var hours = date.getHours();
+        var minutes = date.getMinutes()
+        if(hours.toString().length != 2) hours = "0"+hours;
+        if(minutes.toString().length != 2) minutes = "0"+minutes;
+        document.getElementById("messages").innerHTML += '<div class="message"> <span class="username">' + username + ':</span> ' + message.content + ' <span class="timestamp">' + hours + ":" + minutes + '</span> </div>';
     })
     document.getElementById("size").innerText = "Connected users: "+package.names.length;
 
@@ -58,10 +61,19 @@ socket.on("message", message => {
             document.getElementById("size").innerText = "Connected users: "+message.size;
         }
         var date = new Date(message.date);
-        document.getElementById("messages").innerHTML += '<div class="message"> <span class="username">' + username + ':</span> ' + message.content + ' <span class="timestamp">' + date.getHours() + ":" + date.getMinutes() + '</span> </div>';
+        var hours = date.getHours();
+        var minutes = date.getMinutes()
+        if(hours.toString().length != 2) hours = "0"+hours;
+        if(minutes.toString().length != 2) minutes = "0"+minutes;
+        document.getElementById("messages").innerHTML += '<div class="message"> <span class="username">' + username + ':</span> ' + message.content + ' <span class="timestamp">' + hours + ":" + minutes + '</span> </div>';
 
+        // Scroll down
+        var messagesDiv = document.getElementById("messages")
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
     } catch (e) {}
 })
+
+socket.on("admin", pack => {console.log("Admin info recived!");console.log(pack)})
 
 function join() {
     var token = null;
@@ -79,7 +91,7 @@ function join() {
     localStorage.setItem("username", document.getElementById("username").value)
 }
 
-var login = '<div id="login-window"> <img src="logo.png" alt="Logo" id="logo" draggable="false"> <span class="login-text">Username:</span> <input type="text" class="login-input" placeholder="Username" id="username" oninput="updateName()" maxlength="15"> <span class="login-text">Code:</span> <input type="text" class="login-input" placeholder="5A2F0" maxlength="5" oninput="updateCode()" id="code"> <span id="err">Error message!</span> <button id="login-button" onclick="join()" onmouseover="newEmoji()">Join room</button> <span id="how-to"><a href="">How to see your match-code!</a></span> </div>';
+var login = '<div id="login-window"> <img src="logo.png" alt="Logo" id="logo" draggable="false"> <span class="login-text">Username:</span> <input type="text" class="login-input" placeholder="Username" id="username" oninput="updateName()" maxlength="15"> <span class="login-text">Code:</span> <input type="text" class="login-input" placeholder="5a2f0" maxlength="5" oninput="updateCode()" id="code"> <span id="err">Error message!</span> <button id="login-button" onclick="join()" onmouseover="newEmoji()">Join room</button> <span id="how-to"><a href="">How to see your match-code!</a></span> </div>';
 var chat = '<div id="chat-window"> <div id="chat-header"><button id="back" class="btn" onclick="leave()">Leave</button><span id="size">?</span></div> <div id="messages">  </div> <div id="chat-input-container"> <input type="text" placeholder="Say something!" id="chat-input"> </div> </div>';
 var messageTemplate = '<div class="message"> <span class="username">Olle:</span> Message content <span class="timestamp">23:08</span> </div>';
 
@@ -109,7 +121,7 @@ function newEmoji() {
 function updateCode() {
     var value = document.getElementById("code").value
     value = value.replace(/[^a-z0-9]/gi, '');
-    document.getElementById("code").value = value.toUpperCase();
+    document.getElementById("code").value = value.toLowerCase();
 }
 
 function updateName() {
