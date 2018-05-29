@@ -26,7 +26,8 @@ body{
 /* Image logo */
 #logo{
     position: absolute;
-    left: 14.5px;
+    left: 75px;
+    width: 200px;
 }
 
 .login-input{
